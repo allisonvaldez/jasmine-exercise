@@ -1,7 +1,8 @@
 /*
 Questions:
-1. how to check if not a number different methods not working
-2.
+1. concept of testing --> are we writing test to test failure on html side?
+2. how to check if not a number different methods not working
+3. walk through line 26 code for not being able to submit blank entry
 */
 
 describe("Servers test (with setup and tear-down)", function () {
@@ -24,6 +25,14 @@ describe("Servers test (with setup and tear-down)", function () {
 });
 
 describe("Testing the submitServerInfo function", function () {
+  it("should not allow for blank entry", function () {
+    //still allows for blank entry
+    serverNameInput.value = "";
+    submitServerInfo();
+    expect(Object.keys(allServers).length).toEqual(0);
+    
+  });
+
   it("should not allow a number entry", function () {
     //expect(serverNameInput).toBeNaN();
     //expect(submitServerInfo).not.toEqual('number');
