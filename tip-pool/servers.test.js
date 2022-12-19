@@ -17,11 +17,6 @@ describe("Servers test (with setup and tear-down)", function () {
     expect(Object.keys(allServers).length).toEqual(1);
     expect(allServers['server' + serverId].serverName).toEqual('Alice');
   });
-
-  afterEach(function() {
-    serverNameInput.value = "";
-    allServers = {};
-  });
 });
 
 describe("Testing the submitServerInfo function", function () {
@@ -47,4 +42,9 @@ describe("Testing the updateServerTable function", function () {
   it("should only allow for number entry", function () {
     
   });
+});
+
+afterEach(function() {
+  serverNameInput.value = "";
+  allServers = {};
 });
