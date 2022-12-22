@@ -13,6 +13,7 @@ function submitServerInfo(evt) {
   if (evt) evt.preventDefault(); // when running tests there is no event
 
   let serverName = serverNameInput.value;
+  //console.log(typeof serverNameInput.value);
 
   if (serverName !== '') {
     serverId++;
@@ -22,6 +23,7 @@ function submitServerInfo(evt) {
 
     serverNameInput.value = '';
   }
+  
 }
 
 // Create table row element and pass to appendTd function with input value
